@@ -15,5 +15,3 @@ permissions:
 jobs:
   check-license:
     uses: ClayStan/testQAQ/.github/workflows/check-license.yml@master
-    with:
-      github-token: ${{ secrets.GITHUB_TOKEN }}
