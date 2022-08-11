@@ -4,8 +4,16 @@
 
 name: REUSE Compliance Check
 
-on: pull_request
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+permissions:
+  pull-requests: write
+  contents: read
 
 jobs:
   check-license:
     uses: ClayStan/testQAQ/.github/workflows/check-license.yml@master
+    with:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
